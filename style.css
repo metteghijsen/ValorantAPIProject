@@ -6,6 +6,26 @@ html, body {
     margin: 0;
 }
 
+::selection {
+    background: #FF4654;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #1c252e;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #FF4654;
+    border-radius: 5px;
+}
+
 @font-face {
     font-family: "Poppins regular";
     src: url(fonts/Poppins-Regular.ttf) format("truetype");
@@ -38,12 +58,12 @@ html, body {
     flex-direction: column;
 }
 
-h1 {
-    font-family: "Poppins bold" , sans-serif;
-    color: #FF4654;
-    display: flex;
-    justify-content: center;
-}
+/*h1 {*/
+/*    font-family: "Poppins bold" , sans-serif;*/
+/*    color: #FF4654;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
 
 h2 {
     font-family: "Poppins regular" , sans-serif;
@@ -85,19 +105,18 @@ img {
 .abilityImages{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .abilityImages img{
     height: 60px;
-    padding: 10px 25px 0px 25px;
     justify-content: center;
 }
 
 .abilityNames{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .abilityNames p{
@@ -107,4 +126,9 @@ img {
     color: white;
     font-size: 15px;
     padding: 0px 10px 15px 10px;
+}
+
+.audioContainer{
+    display: flex;
+    justify-content: center;
 }
