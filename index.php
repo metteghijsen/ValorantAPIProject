@@ -13,7 +13,7 @@
 <body>
 <section id="title" class="title">
     <img src="img/2560px-Valorant_logo_-_pink_color_version.svg.png" alt="valorantlogo">
-    <h1>ALLE VALORANT AGENTS </h1>
+    <h1>ALL VALORANT AGENTS </h1>
 </section>
 
 <section id="agents" class="agents">
