@@ -102,33 +102,62 @@ img {
         ". . .";
 }
 
-.abilityImages{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
+/*.abilityImages{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-evenly;*/
+/*}*/
 
-.abilityImages img{
-    height: 60px;
-    justify-content: center;
-}
+/*.abilityImages img{*/
+/*    height: 60px;*/
+/*    justify-content: center;*/
+/*}*/
 
-.abilityNames{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
+/*.abilityNames{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-evenly;*/
+/*}*/
 
-.abilityNames p{
-    display: flex;
-    font-family: "Poppins regular", sans-serif;
-    text-align: center;
-    color: white;
-    font-size: 15px;
-    padding: 0px 10px 15px 10px;
-}
+/*.abilityNames p{*/
+/*    display: flex;*/
+/*    font-family: "Poppins regular", sans-serif;*/
+/*    text-align: center;*/
+/*    color: white;*/
+/*    font-size: 15px;*/
+/*    padding: 0px 10px 15px 10px;*/
+/*}*/
 
 .audioContainer{
     display: flex;
     justify-content: center;
+}
+
+table{
+    width: 100%;
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    background-color: red;*/
+/*    justify-content: space-evenly;*/
+}
+
+table td{
+    text-align: center;
+    opacity: .7;
+}
+
+table td:hover{
+    opacity: 1;
+}
+
+table img{
+    height: 60px;
+}
+
+table p{
+    font-family: "Poppins regular", sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 15px;
 }

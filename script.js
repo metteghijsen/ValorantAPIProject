@@ -29,9 +29,26 @@ fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true").then((respo
         const agent_description_element = document.createElement("p");
         agent_description_element.innerHTML = agent["description"];
 
+        //table aanmaken voor namen en afbeeldingen abilities
+        const agent_abilities_table = document.createElement("table");
+
+        const agent_abilities_image_row = document.createElement("tr");
+
+        const agent_ability_image_1_column = document.createElement("td");
+        const agent_ability_image_2_column = document.createElement("td");
+        const agent_ability_image_3_column = document.createElement("td");
+        const agent_ability_image_4_column = document.createElement("td");
+
+        const agent_abilities_name_row = document.createElement("tr");
+
+        const agent_ability_name_1_column = document.createElement("td");
+        const agent_ability_name_2_column = document.createElement("td");
+        const agent_ability_name_3_column = document.createElement("td");
+        const agent_ability_name_4_column = document.createElement("td");
+
         //div aanmaken voor images van alle abilities
-        const agent_ability_images_container = document.createElement("div");
-        agent_ability_images_container.classList.add("abilityImages")
+        // const agent_ability_images_container = document.createElement("div");
+        // agent_ability_images_container.classList.add("abilityImages")
 
         //images aanmaken voor abilities
         const agent_ability_image_1_element = document.createElement("img");
@@ -47,8 +64,8 @@ fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true").then((respo
         agent_ability_image_4_element.setAttribute("src",agent["abilities"][3]["displayIcon"]);
 
         //div voor namen van alle abilities
-        const agent_ability_names_container = document.createElement("div");
-        agent_ability_names_container.classList.add("abilityNames");
+        // const agent_ability_names_container = document.createElement("div");
+        // agent_ability_names_container.classList.add("abilityNames");
 
         //p elementen aanmaken voor naam van elke ability
         const agent_ability_1_name_element = document.createElement("p");
@@ -81,19 +98,51 @@ fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true").then((respo
         agent_element.appendChild(agent_name_element); //naam van agent
         agent_element.appendChild(agent_description_element); //beschrijving van agent
 
-        //images van abilities toevoegen
-        agent_element.appendChild(agent_ability_images_container);
-        agent_ability_images_container.appendChild(agent_ability_image_1_element);
-        agent_ability_images_container.appendChild(agent_ability_image_2_element);
-        agent_ability_images_container.appendChild(agent_ability_image_3_element);
-        agent_ability_images_container.appendChild(agent_ability_image_4_element);
+        //images en namen abilities toevoegen aan table
+        agent_element.appendChild(agent_abilities_table);//tabel aanmaken
+        agent_abilities_table.appendChild(agent_abilities_image_row); //rij aanmaken voor images
+        agent_abilities_table.appendChild(agent_abilities_name_row); //rij aanmaken voor namen
 
-        //namen van abilities toevoegen
-        agent_element.appendChild(agent_ability_names_container);
-        agent_ability_names_container.appendChild(agent_ability_1_name_element);
-        agent_ability_names_container.appendChild(agent_ability_2_name_element);
-        agent_ability_names_container.appendChild(agent_ability_3_name_element);
-        agent_ability_names_container.appendChild(agent_ability_4_name_element);
+        //images in rijen zetten
+        agent_abilities_image_row.appendChild(agent_ability_image_1_column);//column toevoegen aan tabel
+        agent_ability_image_1_column.appendChild(agent_ability_image_1_element);//image toevoegen aan column
+
+        agent_abilities_image_row.appendChild(agent_ability_image_2_column);//column toevoegen aan tabel
+        agent_ability_image_2_column.appendChild(agent_ability_image_2_element);//image toevoegen aan column
+
+        agent_abilities_image_row.appendChild(agent_ability_image_3_column);//column toevoegen aan tabel
+        agent_ability_image_3_column.appendChild(agent_ability_image_3_element);//image toevoegen aan column
+
+        agent_abilities_image_row.appendChild(agent_ability_image_4_column);//column toevoegen aan tabel
+        agent_ability_image_4_column.appendChild(agent_ability_image_4_element);//image toevoegen aan column
+
+        //teksten in rijen zetten
+        agent_abilities_name_row.appendChild(agent_ability_name_1_column);//column toevoegen aan tabel
+        agent_ability_name_1_column.appendChild(agent_ability_1_name_element);//image toevoegen aan column
+
+        agent_abilities_name_row.appendChild(agent_ability_name_2_column);//column toevoegen aan tabel
+        agent_ability_name_2_column.appendChild(agent_ability_2_name_element);//image toevoegen aan column
+
+        agent_abilities_name_row.appendChild(agent_ability_name_3_column);//column toevoegen aan tabel
+        agent_ability_name_3_column.appendChild(agent_ability_3_name_element);//image toevoegen aan column
+
+        agent_abilities_name_row.appendChild(agent_ability_name_4_column);//column toevoegen aan tabel
+        agent_ability_name_4_column.appendChild(agent_ability_4_name_element);//image toevoegen aan column
+
+
+        // //images van abilities toevoegen
+        // agent_element.appendChild(agent_ability_images_container);
+        // agent_ability_images_container.appendChild(agent_ability_image_1_element);
+        // agent_ability_images_container.appendChild(agent_ability_image_2_element);
+        // agent_ability_images_container.appendChild(agent_ability_image_3_element);
+        // agent_ability_images_container.appendChild(agent_ability_image_4_element);
+        //
+        // //namen van abilities toevoegen
+        // agent_element.appendChild(agent_ability_names_container);
+        // agent_ability_names_container.appendChild(agent_ability_1_name_element);
+        // agent_ability_names_container.appendChild(agent_ability_2_name_element);
+        // agent_ability_names_container.appendChild(agent_ability_3_name_element);
+        // agent_ability_names_container.appendChild(agent_ability_4_name_element);
 
         //audio toevoegen
         agent_element.appendChild(agent_audio_container);
