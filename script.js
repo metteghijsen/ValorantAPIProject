@@ -12,6 +12,9 @@ fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true").then((respo
         //div aanmaken voor eigenschappen karakter
         const agent_element = document.createElement("div");
         agent_element.classList.add("agentBox")
+        //AOS library toevoegen voor de looks
+        agent_element.setAttribute("data-aos","fade-up")
+        agent_element.setAttribute("data-aos-duration","1000")
 
         //h2 voor de naam aanmaken
         const agent_name_element = document.createElement("h2");
@@ -178,6 +181,22 @@ fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true").then((respo
 
         //alle individuele agent-elementen worden in het grote agents-element gezet
         agents_element.appendChild(agent_element);
+
+        //scroll to top knop
+        const toTopEle = document.getElementById("scrollToTop");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 400) {
+                toTopEle.style.transform = "scale(1)";
+                toTopEle.style.opacity = "1";
+                toTopEle.style.pointerEvents = "all";
+            }
+            else if (window.pageYOffset < 400) {
+                toTopEle.style.transform = "scale(0)";
+                toTopEle.style.opacity = "0";
+                toTopEle.style.pointerEvents = "none";
+            }
+        })
     })
 })
 
