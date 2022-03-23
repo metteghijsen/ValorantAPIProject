@@ -68,17 +68,42 @@ fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true").then((respo
         // agent_ability_names_container.classList.add("abilityNames");
 
         //p elementen aanmaken voor naam van elke ability
-        const agent_ability_1_name_element = document.createElement("p");
-        agent_ability_1_name_element.innerHTML = agent["abilities"][0]["displayName"];
+        const agent_ability_name_1_element = document.createElement("p");
+        agent_ability_name_1_element.innerHTML = agent["abilities"][0]["displayName"];
 
-        const agent_ability_2_name_element = document.createElement("p");
-        agent_ability_2_name_element.innerHTML = agent["abilities"][1]["displayName"];
+        const agent_ability_name_2_element = document.createElement("p");
+        agent_ability_name_2_element.innerHTML = agent["abilities"][1]["displayName"];
 
-        const agent_ability_3_name_element = document.createElement("p");
-        agent_ability_3_name_element.innerHTML = agent["abilities"][2]["displayName"];
+        const agent_ability_name_3_element = document.createElement("p");
+        agent_ability_name_3_element.innerHTML = agent["abilities"][2]["displayName"];
 
-        const agent_ability_4_name_element = document.createElement("p");
-        agent_ability_4_name_element.innerHTML = agent["abilities"][3]["displayName"];
+        const agent_ability_name_4_element = document.createElement("p");
+        agent_ability_name_4_element.innerHTML = agent["abilities"][3]["displayName"];
+
+        //p element aanmaken voor beschrijving van ability bij hover
+        const agent_ability_description_element = document.createElement("p");
+        agent_ability_description_element.classList.add("abilityDescription")
+        agent_ability_description_element.innerHTML = agent["abilities"][0]["description"];
+
+        //content in p element aanpassen bij hover
+        agent_ability_image_1_element.parameter = 0;
+        agent_ability_image_1_element.addEventListener("mouseover", showAbilityDescription)
+
+        agent_ability_image_2_element.parameter = 1;
+        agent_ability_image_2_element.addEventListener("mouseover", showAbilityDescription)
+
+        agent_ability_image_3_element.parameter = 2;
+        agent_ability_image_3_element.addEventListener("mouseover", showAbilityDescription)
+
+        agent_ability_image_4_element.parameter = 3;
+        agent_ability_image_4_element.addEventListener("mouseover", showAbilityDescription)
+
+        //De parameter in een event bevat alle informatie rond het event (muis positie etc). Door .currentTarget te gebruiken vind je het element die het event aanroept (in dit geval de image). Deze hebben we eerder een parameter gegeven om de juiste index te vinden van de beschrijving
+        function showAbilityDescription(event){
+            //uncomment deze line om te zien wat er in het event meegegeven wordt
+            //console.log(event);
+            agent_ability_description_element.innerHTML = agent["abilities"][event.currentTarget.parameter]["description"];
+        }
 
         //div aanmaken voor audio element
         const agent_audio_container = document.createElement("div")
@@ -118,17 +143,16 @@ fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true").then((respo
 
         //teksten in rijen zetten
         agent_abilities_name_row.appendChild(agent_ability_name_1_column);//column toevoegen aan tabel
-        agent_ability_name_1_column.appendChild(agent_ability_1_name_element);//image toevoegen aan column
+        agent_ability_name_1_column.appendChild(agent_ability_name_1_element);//image toevoegen aan column
 
         agent_abilities_name_row.appendChild(agent_ability_name_2_column);//column toevoegen aan tabel
-        agent_ability_name_2_column.appendChild(agent_ability_2_name_element);//image toevoegen aan column
+        agent_ability_name_2_column.appendChild(agent_ability_name_2_element);//image toevoegen aan column
 
         agent_abilities_name_row.appendChild(agent_ability_name_3_column);//column toevoegen aan tabel
-        agent_ability_name_3_column.appendChild(agent_ability_3_name_element);//image toevoegen aan column
+        agent_ability_name_3_column.appendChild(agent_ability_name_3_element);//image toevoegen aan column
 
         agent_abilities_name_row.appendChild(agent_ability_name_4_column);//column toevoegen aan tabel
-        agent_ability_name_4_column.appendChild(agent_ability_4_name_element);//image toevoegen aan column
-
+        agent_ability_name_4_column.appendChild(agent_ability_name_4_element);//image toevoegen aan column
 
         // //images van abilities toevoegen
         // agent_element.appendChild(agent_ability_images_container);
@@ -143,6 +167,9 @@ fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true").then((respo
         // agent_ability_names_container.appendChild(agent_ability_2_name_element);
         // agent_ability_names_container.appendChild(agent_ability_3_name_element);
         // agent_ability_names_container.appendChild(agent_ability_4_name_element);
+
+        //beschrijving van abilities toevoegen
+        agent_element.appendChild(agent_ability_description_element);
 
         //audio toevoegen
         agent_element.appendChild(agent_audio_container);
