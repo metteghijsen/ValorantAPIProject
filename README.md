@@ -1,7 +1,7 @@
 # Valorant API Project
 
 ## Project description
-In this project, I took a first dive into the use of APIs. I made use of the Valorant API. I show some properties of each agent from Valorant. 
+In this project, I took a first dive into the use of APIs. I made use of the Valorant API. Some properties of each agent are shown on the webpage. 
 Namely:
 - Agent icon (profile picture)
 - Agent background
