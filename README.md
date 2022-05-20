@@ -22,7 +22,7 @@ When using XAMPP it is important to put the project in the htdocs folder. Then y
 In case you have Visual Studio Code installed, you can open the project in there. Clicking on the 'Go Live' button in the status bar will open a live server where you should be able to see the project.
 
 ## Usage
-If you go to [my school-website]([https://i481695.hera.fhict.nl/dev-workshop-1/](https://i481695.hera.fhict.nl/valorant-api-project/)), you can use the project without installing it.
+If you go to [my school-website](https://i481695.hera.fhict.nl/valorant-api-project/), you can use the project without installing it.
 
 When you enter the web page you will see a brief overview of all the agents in Valorant. You can scroll through this looking for a specific agent. You can read everything there is to know about this agent. 
 
