@@ -199,4 +199,3 @@ fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true").then((respo
         })
     })
 })
-
